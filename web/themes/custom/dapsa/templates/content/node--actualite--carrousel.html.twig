@@ -1,0 +1,10 @@
+<div class="carrousel__diapo">
+  <div class="carrousel__texte">
+    <h3><a href="{{ url }}">{{ label }}</a></h3>
+    {% if resume %}<p class="resume">{{ resume|length > 140 ? resume|slice(0, 137) ~ '…' : resume }}</p>{% endif %}
+    <a class="bouton" href="{{ url }}">Lire la suite<span class="visually-hidden"> : {{ label }}</span></a>
+  </div>
+  <div class="carrousel__image">
+    {% if image_url %}<img src="{{ image_url }}" alt="{{ image_alt }}" loading="lazy">{% endif %}
+  </div>
+</div>

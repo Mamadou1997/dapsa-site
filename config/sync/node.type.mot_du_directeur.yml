@@ -1,0 +1,18 @@
+uuid: ec5b39d2-6d3a-4d55-8fcf-f6271e5f1fe9
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: 'mot du directeur'
+type: mot_du_directeur
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

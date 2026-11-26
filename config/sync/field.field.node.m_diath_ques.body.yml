@@ -1,0 +1,24 @@
+uuid: 805e86a2-cd35-43af-a0b3-14991932c38e
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.m_diath_ques
+  module:
+    - text
+id: node.m_diath_ques.body
+field_name: body
+entity_type: node
+bundle: m_diath_ques
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

@@ -1,0 +1,33 @@
+uuid: cf794cd3-ef13-4366-9014-4249cb5a9705
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.features.body
+    - field.field.node.features.field_icone
+    - node.type.features
+  module:
+    - text
+    - user
+id: node.features.teaser
+targetEntityType: node
+bundle: features
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_icone: true
+  langcode: true

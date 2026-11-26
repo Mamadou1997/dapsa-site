@@ -1,0 +1,15 @@
+name: DAPSA
+type: theme
+description: "Thème du site de la Direction de l'Analyse, de la Prévision et des Statistiques Agricoles (DAPSA)."
+core_version_requirement: ^11
+base theme: stable9
+logo: images/logo.png
+libraries:
+  - dapsa/global
+regions:
+  header: "En-tête"
+  primary_menu: "Menu principal"
+  highlighted: "Mise en avant"
+  content: "Contenu"
+  sidebar: "Barre latérale"
+  footer: "Pied de page"

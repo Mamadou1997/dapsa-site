@@ -1,0 +1,21 @@
+uuid: 19121270-992f-47a9-9e85-9979efffaf77
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type
+    - node.type.publication
+  module:
+    - options
+id: node.publication.field_type
+field_name: field_type
+entity_type: node
+bundle: publication
+label: Type
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

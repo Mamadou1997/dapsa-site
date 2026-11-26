@@ -1,0 +1,10 @@
+<article{{ attributes.addClass('doc') }}>
+  <span class="pastille" aria-hidden="true">
+    <span class="pastille__haut">Actu</span>
+    <span class="pastille__bas">{{ annee_creation }}</span>
+  </span>
+  <div class="doc__texte">
+    <h3 class="doc__titre"><a href="{{ url }}">{{ label }}</a></h3>
+    {% if resume %}<p class="doc__meta">{{ resume }}</p>{% endif %}
+  </div>
+</article>

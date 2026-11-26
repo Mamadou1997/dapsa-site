@@ -1,0 +1,20 @@
+uuid: 9a06ccbe-6eda-4ad8-a7cb-e2034e9782d3
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dapsa
+id: dapsa_contenu
+theme: dapsa
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: ''
+  label_display: '0'
+  provider: system
+visibility: {  }

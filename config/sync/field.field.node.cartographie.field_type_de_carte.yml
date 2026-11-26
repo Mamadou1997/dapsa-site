@@ -1,0 +1,21 @@
+uuid: d6d01eab-5546-43a5-a884-5ef4950b1828
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_type_de_carte
+    - node.type.cartographie
+  module:
+    - options
+id: node.cartographie.field_type_de_carte
+field_name: field_type_de_carte
+entity_type: node
+bundle: cartographie
+label: 'Type de carte'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

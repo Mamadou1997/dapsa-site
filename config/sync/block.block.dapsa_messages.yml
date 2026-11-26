@@ -1,0 +1,20 @@
+uuid: 41dca21b-496f-4677-8e62-53ce32a30c38
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dapsa
+id: dapsa_messages
+theme: dapsa
+region: highlighted
+weight: -10
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: ''
+  label_display: '0'
+  provider: system
+visibility: {  }

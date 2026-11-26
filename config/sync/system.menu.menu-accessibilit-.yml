@@ -1,0 +1,8 @@
+uuid: a20b7d71-d636-489e-8adf-4e5f8ac1cad7
+langcode: en
+status: true
+dependencies: {  }
+id: menu-accessibilit-
+label: Accessibilité
+description: ''
+locked: false

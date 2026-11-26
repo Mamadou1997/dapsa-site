@@ -1,0 +1,70 @@
+{#
+/**
+ * @file
+ * Page d'accueil : bannière, actualités, mot du directeur, accès rapides,
+ * partenaires, agenda et dernières publications.
+ */
+#}
+{% include '@dapsa/layout/_entete.html.twig' %}
+<section class="banniere banniere--accueil">
+  <div class="conteneur banniere__interieur">
+    <h1>Direction de l'Analyse, de la Prévision et des Statistiques Agricoles</h1>
+    <p>Pour un développement durable et harmonieux de l'agriculture au Sénégal</p>
+  </div>
+</section>
+<main id="contenu-principal">
+  {{ page.highlighted }}
+  <div class="conteneur accueil-haut">
+    <section class="accueil-haut__actus" aria-labelledby="titre-actus">
+      <h2 id="titre-actus" class="titre-section">Actualités récentes</h2>
+      <div class="carrousel">
+        {{ drupal_view('actualites', 'block_carrousel') }}
+        <div class="carrousel__commandes">
+          <button type="button" data-carrousel="prec" aria-label="Actualité précédente">‹</button>
+          <button type="button" data-carrousel="suiv" aria-label="Actualité suivante">›</button>
+          <span class="carrousel__position" aria-live="polite"></span>
+        </div>
+      </div>
+      <p><a class="bouton" href="{{ path('view.actualites.page_1') }}">Toutes les actualités</a></p>
+    </section>
+    <aside class="accueil-haut__directeur" aria-labelledby="titre-directeur">
+      <h2 id="titre-directeur" class="titre-section">Mot du directeur</h2>
+      {{ drupal_view('mot_du_directeur', 'block_1') }}
+    </aside>
+  </div>
+
+  <section class="cercles" aria-label="Accès rapides">
+    <div class="conteneur cercles__liste">
+      <a class="cercle" href="{{ path('entity.node.canonical', {'node': 6}) }}">
+        <svg width="52" height="44" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M2 18h20M5 18v-6M9 18V7M13 18v-8M17 18V4"/></svg>
+        <span>Statistiques agricoles</span>
+      </a>
+      <a class="cercle" href="{{ path('entity.node.canonical', {'node': 5}) }}">
+        <svg width="52" height="44" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h12v8H8l-4 3v-3H3zM18 8h3v8h-1v3l-4-3h-5v-2"/></svg>
+        <span>Politique agricole</span>
+      </a>
+      <a class="cercle" href="{{ path('entity.node.canonical', {'node': 98}) }}">
+        <svg width="52" height="44" viewBox="0 0 24 20" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="10" r="8"/><path d="M4 10h16M12 2c-3 3-3 13 0 16c3-3 3-13 0-16"/></svg>
+        <span>Projets et programmes</span>
+      </a>
+    </div>
+  </section>
+
+  <div class="conteneur accueil-bas">
+    <section aria-labelledby="titre-partenaires">
+      <h2 id="titre-partenaires" class="titre-section">Partenaires</h2>
+      {{ drupal_view('partenaires', 'block_1') }}
+    </section>
+    <section aria-labelledby="titre-agenda">
+      <h2 id="titre-agenda" class="titre-section">Agenda</h2>
+      {{ drupal_view('agenda', 'block_1') }}
+      <p><a class="bouton" href="{{ path('view.agenda.page_1') }}">Voir tout l'agenda</a></p>
+    </section>
+    <section aria-labelledby="titre-publications">
+      <h2 id="titre-publications" class="titre-section">Publications</h2>
+      {{ drupal_view('publications', 'block_1') }}
+      <p><a class="bouton" href="{{ path('view.publications.page_1') }}">Toutes les publications</a></p>
+    </section>
+  </div>
+</main>
+{% include '@dapsa/layout/_pied.html.twig' %}

@@ -1,0 +1,30 @@
+uuid: e48f9bea-e80d-4c77-804e-cb334b511216
+langcode: und
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_type
+field_name: field_type
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: '1'
+      label: 'Note et fiche'
+    -
+      value: '2'
+      label: Rapport
+    -
+      value: '3'
+      label: Autre
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

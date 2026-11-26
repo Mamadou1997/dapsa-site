@@ -1,0 +1,14 @@
+uuid: ee07b76a-7b7b-4d7c-9971-ed6ed80dff40
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.validateur_de_contenu
+  module:
+    - user
+id: user_remove_role_action.validateur_de_contenu
+label: 'Enlever le rôle Validateur de contenu des utilisateurs sélectionnés'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: validateur_de_contenu

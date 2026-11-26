@@ -1,0 +1,31 @@
+uuid: efd379a4-3462-478a-9ba9-0a6c59d25467
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.document.body
+    - field.field.node.document.document_types
+    - node.type.document
+  module:
+    - text
+    - user
+id: node.document.default
+targetEntityType: node
+bundle: document
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  document_types: true
+  langcode: true

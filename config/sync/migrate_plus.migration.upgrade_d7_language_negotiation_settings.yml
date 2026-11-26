@@ -1,0 +1,46 @@
+uuid: d194d9d5-790f-408d-b366-004d6b5fd429
+langcode: fr
+status: true
+dependencies: {  }
+id: upgrade_d7_language_negotiation_settings
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Configuration
+migration_group: migrate_drupal_7
+label: 'Language negotiation settings'
+source:
+  plugin: variable
+  variables:
+    - locale_language_negotiation_session_param
+    - locale_language_negotiation_url_part
+  source_module: locale
+process:
+  session/parameter:
+    -
+      plugin: default_value
+      source: locale_language_negotiation_session_param
+      default_value: language
+  selected_langcode:
+    -
+      plugin: default_value
+      default_value: site_default
+  url/source:
+    -
+      plugin: static_map
+      source: locale_language_negotiation_url_part
+      default_value: path_prefix
+      map:
+        - path_prefix
+        - domain
+destination:
+  plugin: config
+  config_name: language.negotiation
+idMap: {  }
+migration_dependencies:
+  required:
+    - upgrade_language
+  optional: {  }
+include: null

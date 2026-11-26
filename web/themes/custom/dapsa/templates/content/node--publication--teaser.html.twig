@@ -1,0 +1,13 @@
+<article{{ attributes.addClass('doc') }}>
+  <span class="pastille" aria-hidden="true">
+    <span class="pastille__haut">{{ document_url ? 'PDF' : 'DOC' }}</span>
+    <span class="pastille__bas">{{ annee_creation }}</span>
+  </span>
+  <div class="doc__texte">
+    <h3 class="doc__titre"><a href="{{ url }}">{{ label }}</a></h3>
+    <p class="doc__meta">{{ type_libelle }}{% if document_taille %} · PDF, {{ document_taille }}{% endif %}</p>
+  </div>
+  {% if document_url %}
+    <a class="bouton" href="{{ document_url }}" download>Télécharger<span class="visually-hidden"> {{ label }}</span></a>
+  {% endif %}
+</article>

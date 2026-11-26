@@ -1,0 +1,18 @@
+uuid: 13c3b2a6-062c-488e-ba5c-9c41f011f99e
+langcode: fr
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+name: Partenaires
+type: partenaires
+description: null
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: false

@@ -1,0 +1,72 @@
+<?php
+
+/**
+ * @file
+ * Fonctions du thème DAPSA.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK() for page templates.
+ */
+function dapsa_preprocess_page(array &$variables): void {
+  $variables['theme_path'] = '/' . \Drupal::service('extension.list.theme')->getPath('dapsa');
+  $variables['annee'] = date('Y');
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter() for page templates.
+ */
+function dapsa_theme_suggestions_page_alter(array &$suggestions, array $variables): void {
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    $suggestions[] = 'page__type__' . $node->bundle();
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ */
+function dapsa_preprocess_node(array &$variables): void {
+  /** @var \Drupal\node\NodeInterface $node */
+  $node = $variables['node'];
+  $variables['annee_creation'] = date('Y', (int) $node->getCreatedTime());
+
+  // Libellé du type de publication (Note et fiche, Rapport, Autre).
+  if ($node->hasField('field_type') && !$node->get('field_type')->isEmpty()) {
+    $valeur = $node->get('field_type')->value;
+    $options = $node->get('field_type')->getFieldDefinition()->getFieldStorageDefinition()->getSetting('allowed_values');
+    $variables['type_libelle'] = $options[$valeur] ?? $valeur;
+  }
+
+  // Fichier joint (PDF) : adresse et taille lisible.
+  if ($node->hasField('field_document') && !$node->get('field_document')->isEmpty()) {
+    $fichier = $node->get('field_document')->entity;
+    if ($fichier) {
+      $variables['document_url'] = $fichier->createFileUrl(FALSE);
+      $variables['document_taille'] = \Drupal\Core\StringTranslation\ByteSizeMarkup::create((int) $fichier->getSize());
+    }
+  }
+
+  // Image principale.
+  if ($node->hasField('field_image') && !$node->get('field_image')->isEmpty()) {
+    $image = $node->get('field_image')->entity;
+    if ($image) {
+      $variables['image_url'] = $image->createFileUrl(FALSE);
+      $variables['image_alt'] = $node->get('field_image')->alt ?: $node->label();
+    }
+  }
+
+  // Date d'agenda : jour/mois et année.
+  if ($node->hasField('field_date') && !$node->get('field_date')->isEmpty()) {
+    $debut = strtotime($node->get('field_date')->value . ' UTC');
+    $variables['date_jour'] = date('d/m', $debut);
+    $variables['date_annee'] = date('Y', $debut);
+  }
+
+  // Résumé texte court.
+  if ($node->hasField('body') && !$node->get('body')->isEmpty()) {
+    $corps = $node->get('body')->summary ?: $node->get('body')->value;
+    $texte = trim(html_entity_decode(strip_tags($corps)));
+    $variables['resume'] = mb_strlen($texte) > 220 ? mb_substr($texte, 0, 217) . '…' : $texte;
+  }
+}

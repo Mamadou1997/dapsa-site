@@ -1,0 +1,89 @@
+uuid: 7b0b7e45-7867-4294-b04e-413c781dcddb
+langcode: fr
+status: true
+dependencies:
+  config:
+    - filter.format.filtered_html
+    - filter.format.full_html
+    - node.type.article
+    - node.type.document
+    - node.type.page
+  module:
+    - block
+    - comment
+    - contextual
+    - filter
+    - image
+    - language
+    - locale
+    - node
+    - path
+    - pathauto
+    - system
+    - taxonomy
+    - toolbar
+    - views_ui
+_core:
+  default_config_hash: OeKGIkmZA_c-t6QLH81WNQx8gDCc1MRmxaTuQgxBByU
+id: administrator
+label: administrator
+weight: 2
+is_admin: true
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer actions'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer content types'
+  - 'administer filters'
+  - 'administer image styles'
+  - 'administer languages'
+  - 'administer menu'
+  - 'administer modules'
+  - 'administer nodes'
+  - 'administer pathauto'
+  - 'administer permissions'
+  - 'administer site configuration'
+  - 'administer software updates'
+  - 'administer taxonomy'
+  - 'administer themes'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'administer views'
+  - 'bypass node access'
+  - 'cancel account'
+  - 'change own username'
+  - 'create article content'
+  - 'create document content'
+  - 'create page content'
+  - 'create url aliases'
+  - 'delete any article content'
+  - 'delete any document content'
+  - 'delete any page content'
+  - 'delete own article content'
+  - 'delete own document content'
+  - 'delete own page content'
+  - 'edit any article content'
+  - 'edit any document content'
+  - 'edit any page content'
+  - 'edit own article content'
+  - 'edit own comments'
+  - 'edit own document content'
+  - 'edit own page content'
+  - 'notify of path changes'
+  - 'post comments'
+  - 'select account cancellation method'
+  - 'skip comment approval'
+  - 'translate interface'
+  - 'use text format filtered_html'
+  - 'use text format full_html'
+  - 'view own unpublished content'
+  - 'view the administration theme'

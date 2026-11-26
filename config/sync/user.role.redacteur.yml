@@ -1,0 +1,77 @@
+uuid: b00c70d9-90b0-4e89-81e7-83400e750278
+langcode: fr
+status: true
+dependencies:
+  config:
+    - node.type.actualite
+    - node.type.agenda
+    - node.type.features
+    - node.type.mot_du_directeur
+    - node.type.page
+    - node.type.partenaires
+    - node.type.publication
+    - node.type.simplenews
+  module:
+    - block
+    - comment
+    - contextual
+    - node
+    - system
+    - toolbar
+id: redacteur
+label: redacteur
+weight: 3
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access comments'
+  - 'access content'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access site in maintenance mode'
+  - 'access site reports'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer blocks'
+  - 'administer comments'
+  - 'administer nodes'
+  - 'cancel account'
+  - 'change own username'
+  - 'create actualite content'
+  - 'create agenda content'
+  - 'create page content'
+  - 'create partenaires content'
+  - 'create publication content'
+  - 'create simplenews content'
+  - 'delete any actualite content'
+  - 'delete any agenda content'
+  - 'delete any page content'
+  - 'delete any partenaires content'
+  - 'delete any publication content'
+  - 'delete own actualite content'
+  - 'delete own agenda content'
+  - 'delete own page content'
+  - 'delete own partenaires content'
+  - 'delete own publication content'
+  - 'delete own simplenews content'
+  - 'edit any actualite content'
+  - 'edit any agenda content'
+  - 'edit any features content'
+  - 'edit any mot_du_directeur content'
+  - 'edit any page content'
+  - 'edit any partenaires content'
+  - 'edit any publication content'
+  - 'edit any simplenews content'
+  - 'edit own actualite content'
+  - 'edit own agenda content'
+  - 'edit own comments'
+  - 'edit own features content'
+  - 'edit own mot_du_directeur content'
+  - 'edit own page content'
+  - 'edit own partenaires content'
+  - 'edit own publication content'
+  - 'edit own simplenews content'
+  - 'post comments'
+  - 'skip comment approval'
+  - 'view own unpublished content'
+  - 'view the administration theme'

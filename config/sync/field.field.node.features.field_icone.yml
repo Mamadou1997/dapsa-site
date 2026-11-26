@@ -1,0 +1,21 @@
+uuid: aa5a8a6e-d6f6-4a97-a054-3adf1db90753
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_icone
+    - node.type.features
+id: node.features.field_icone
+field_name: field_icone
+entity_type: node
+bundle: features
+label: icone
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: fa-bullhorn
+default_value_callback: ''
+settings: {  }
+field_type: string

@@ -1,0 +1,12 @@
+uuid: 8e03031f-5b2e-4e72-8f69-db62f1ecccfc
+langcode: fr
+status: true
+dependencies:
+  module:
+    - node
+id: node_search
+label: Contenus
+path: node
+weight: -10
+plugin: node_search
+configuration: {  }

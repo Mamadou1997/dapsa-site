@@ -1,0 +1,24 @@
+uuid: b5c26e2a-dba0-43a5-9c18-e0872d975950
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.cartographie
+  module:
+    - text
+id: node.cartographie.body
+field_name: body
+entity_type: node
+bundle: cartographie
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

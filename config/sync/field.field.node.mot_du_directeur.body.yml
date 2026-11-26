@@ -1,0 +1,24 @@
+uuid: 1a52a1b3-eeae-4aed-9191-9320fb4e2a8b
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.mot_du_directeur
+  module:
+    - text
+id: node.mot_du_directeur.body
+field_name: body
+entity_type: node
+bundle: mot_du_directeur
+label: Body
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary

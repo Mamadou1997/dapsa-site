@@ -1,0 +1,6 @@
+<div class="encadre directeur">
+  {% if image_url %}<img src="{{ image_url }}" alt="{{ image_alt }}">{% endif %}
+  <h3>{{ node.field_prenom_nom.value ?: label }}</h3>
+  {% if resume %}<p>{{ resume }}</p>{% endif %}
+  <a class="bouton" href="{{ url }}">Lire la suite<span class="visually-hidden"> du mot du directeur</span></a>
+</div>

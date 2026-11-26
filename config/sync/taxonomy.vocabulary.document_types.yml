@@ -1,0 +1,9 @@
+uuid: 4f0f93ae-8179-4c31-a5ff-d801b5fec12a
+langcode: fr
+status: true
+dependencies: {  }
+name: 'Document types'
+vid: document_types
+description: null
+weight: 0
+new_revision: false

@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: fr
+uuid: 9361e6d0-4ac3-4ee2-bb66-48ee1fd78572
+name: "DAPSA – Direction de l'Analyse, de la Prévision et des Statistiques Agricoles"
+mail: admin@example.com
+slogan: "Pour un développement durable et harmonieux de l'agriculture au Sénégal"
+page:
+  403: ''
+  404: ''
+  front: /node
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: fr
+mail_notification: null

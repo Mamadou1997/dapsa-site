@@ -1,0 +1,23 @@
+{#
+/**
+ * @file
+ * Gabarit de page générique : bannière avec titre, contenu et barre latérale optionnelle.
+ */
+#}
+{% include '@dapsa/layout/_entete.html.twig' %}
+<section class="banniere">
+  <div class="conteneur banniere__interieur">
+    <nav class="fil-ariane" aria-label="Fil d'Ariane">{{ drupal_breadcrumb() }}</nav>
+    <h1>{{ drupal_title() }}</h1>
+  </div>
+</section>
+<main id="contenu-principal" class="conteneur principal{{ page.sidebar ? ' principal--colonnes' }}">
+  <div class="principal__contenu">
+    {{ page.highlighted }}
+    {{ page.content }}
+  </div>
+  {% if page.sidebar %}
+    <aside class="principal__lateral">{{ page.sidebar }}</aside>
+  {% endif %}
+</main>
+{% include '@dapsa/layout/_pied.html.twig' %}

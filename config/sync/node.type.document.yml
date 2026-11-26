@@ -1,0 +1,11 @@
+uuid: 71ceade6-25c3-4c6e-932f-1d45c2422018
+langcode: fr
+status: true
+dependencies: {  }
+name: Document
+type: document
+description: 'Upload new document. Please note that the document would be visible after administrators have published it.'
+help: null
+new_revision: false
+preview_mode: 1
+display_submitted: true

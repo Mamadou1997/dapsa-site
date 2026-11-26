@@ -1,0 +1,25 @@
+uuid: 5f78535a-927f-4627-8e4c-64adb814c030
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.email_plain
+    - field.field.node.simplenews.body
+    - field.field.node.simplenews.field_simplenews_term
+    - node.type.simplenews
+  module:
+    - user
+id: node.simplenews.email_plain
+targetEntityType: node
+bundle: simplenews
+mode: email_plain
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_simplenews_term: true
+  langcode: true

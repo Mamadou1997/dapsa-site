@@ -1,0 +1,42 @@
+uuid: e330264f-7a5e-4784-a1f2-e0ffddb33c52
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.publication.body
+    - field.field.node.publication.field_document
+    - field.field.node.publication.field_tags
+    - field.field.node.publication.field_type
+    - node.type.publication
+  module:
+    - options
+    - text
+    - user
+id: node.publication.default
+targetEntityType: node
+bundle: publication
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_type:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_document: true
+  field_tags: true
+  langcode: true

@@ -1,0 +1,12 @@
+uuid: 626410a8-6c9b-47db-907b-280872f3ba61
+langcode: fr
+status: true
+dependencies:
+  module:
+    - system
+id: validateur_de_contenu
+label: 'Validateur de contenu'
+weight: 4
+is_admin: false
+permissions:
+  - 'access administration pages'

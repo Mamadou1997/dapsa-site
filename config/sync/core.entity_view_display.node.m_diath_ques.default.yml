@@ -1,0 +1,29 @@
+uuid: a6ebf997-3fac-4eab-b7c7-aa8546352ef2
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.m_diath_ques.body
+    - node.type.m_diath_ques
+  module:
+    - text
+    - user
+id: node.m_diath_ques.default
+targetEntityType: node
+bundle: m_diath_ques
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

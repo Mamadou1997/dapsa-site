@@ -1,0 +1,20 @@
+uuid: 727d94ce-28a1-4acb-9c06-10c9c901cef7
+langcode: fr
+status: true
+dependencies:
+  theme:
+    - dapsa
+id: dapsa_onglets
+theme: dapsa
+region: highlighted
+weight: -5
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: ''
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }

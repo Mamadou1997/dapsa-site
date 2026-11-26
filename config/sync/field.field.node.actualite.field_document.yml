@@ -1,0 +1,27 @@
+uuid: 0f5dada2-b939-47d6-93f7-7db664fa2dba
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_document
+    - node.type.actualite
+  module:
+    - file
+id: node.actualite.field_document
+field_name: field_document
+entity_type: node
+bundle: actualite
+label: Document
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: ''
+  file_extensions: pdf
+  max_filesize: '10 MB'
+  description_field: false
+field_type: file

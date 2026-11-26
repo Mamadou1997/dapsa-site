@@ -1,0 +1,107 @@
+uuid: 3991fb53-082e-4d6f-9cd6-0c2a904c847b
+langcode: fr
+status: true
+dependencies: {  }
+id: upgrade_d7_url_alias
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'URL aliases'
+source:
+  plugin: d7_url_alias
+  constants:
+    slash: /
+process:
+  id:
+    -
+      plugin: get
+      source: pid
+  _path:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - source
+  alias:
+    -
+      plugin: concat
+      source:
+        - constants/slash
+        - alias
+  node_translation:
+    -
+      plugin: explode
+      source: source
+      delimiter: /
+    -
+      plugin: extract
+      default: INVALID_NID
+      index:
+        - 1
+    -
+      plugin: migration_lookup
+      migration:
+        - upgrade_d7_node_complete_actualite
+        - upgrade_d7_node_complete_agenda
+        - upgrade_d7_node_complete_article
+        - upgrade_d7_node_complete_cartographie
+        - upgrade_d7_node_complete_document
+        - upgrade_d7_node_complete_features
+        - upgrade_d7_node_complete_mot_du_directeur
+        - upgrade_d7_node_complete_m_diath_ques
+        - upgrade_d7_node_complete_page
+        - upgrade_d7_node_complete_partenaires
+        - upgrade_d7_node_complete_publication
+        - upgrade_d7_node_complete_simplenews
+        - upgrade_d7_node_complete_webform
+    -
+      plugin: node_complete_node_translation_lookup
+  langcode:
+    -
+      plugin: null_coalesce
+      source:
+        - '@node_translation/1'
+        - language
+  path:
+    -
+      plugin: path_set_translated
+      source:
+        - '@_path'
+        - '@node_translation'
+destination:
+  plugin: 'entity:path_alias'
+idMap: {  }
+migration_dependencies:
+  required: {  }
+  optional:
+    - upgrade_d7_node_complete_actualite
+    - upgrade_d7_node_complete_agenda
+    - upgrade_d7_node_complete_article
+    - upgrade_d7_node_complete_cartographie
+    - upgrade_d7_node_complete_document
+    - upgrade_d7_node_complete_features
+    - upgrade_d7_node_complete_mot_du_directeur
+    - upgrade_d7_node_complete_m_diath_ques
+    - upgrade_d7_node_complete_page
+    - upgrade_d7_node_complete_partenaires
+    - upgrade_d7_node_complete_publication
+    - upgrade_d7_node_complete_simplenews
+    - upgrade_d7_node_complete_webform
+    - upgrade_d7_node_complete_actualite
+    - upgrade_d7_node_complete_agenda
+    - upgrade_d7_node_complete_article
+    - upgrade_d7_node_complete_cartographie
+    - upgrade_d7_node_complete_document
+    - upgrade_d7_node_complete_features
+    - upgrade_d7_node_complete_mot_du_directeur
+    - upgrade_d7_node_complete_m_diath_ques
+    - upgrade_d7_node_complete_page
+    - upgrade_d7_node_complete_partenaires
+    - upgrade_d7_node_complete_publication
+    - upgrade_d7_node_complete_simplenews
+    - upgrade_d7_node_complete_webform
+include: null

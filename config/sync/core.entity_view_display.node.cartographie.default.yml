@@ -1,0 +1,51 @@
+uuid: 44fbd9d5-e548-4a07-9969-0d9625d4dce3
+langcode: fr
+status: true
+dependencies:
+  config:
+    - field.field.node.cartographie.body
+    - field.field.node.cartographie.field_image
+    - field.field.node.cartographie.field_type_de_carte
+    - node.type.cartographie
+  module:
+    - image
+    - options
+    - text
+    - user
+id: node.cartographie.default
+targetEntityType: node
+bundle: cartographie
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: ''
+      image_loading:
+        attribute: lazy
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_type_de_carte:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  langcode: true

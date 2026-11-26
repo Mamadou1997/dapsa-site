@@ -1,0 +1,14 @@
+uuid: 65280ebe-40f0-4f26-b5f3-f07da8f611e6
+langcode: fr
+status: true
+dependencies:
+  config:
+    - user.role.validateur_de_contenu
+  module:
+    - user
+id: user_add_role_action.validateur_de_contenu
+label: 'Ajouter le rôle Validateur de contenu aux utilisateurs sélectionnés'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: validateur_de_contenu

@@ -1,0 +1,27 @@
+uuid: 8bdada04-22ec-4206-aa84-e08a826fb6db
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.carrousel
+    - field.field.node.actualite.body
+    - field.field.node.actualite.field_document
+    - field.field.node.actualite.field_image
+    - node.type.actualite
+  module:
+    - user
+id: node.actualite.carrousel
+targetEntityType: node
+bundle: actualite
+mode: carrousel
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  body: true
+  field_document: true
+  field_image: true
+  langcode: true

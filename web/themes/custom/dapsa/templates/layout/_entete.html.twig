@@ -1,0 +1,27 @@
+<a class="lien-evitement" href="#contenu-principal">Aller au contenu principal</a>
+<header class="entete">
+  <div class="conteneur entete__haut">
+    <a class="marque" href="{{ path('<front>') }}" rel="home">
+      <img src="{{ theme_path }}/images/logo.png" alt="République du Sénégal – DAPSA" width="250" height="80">
+      <span class="marque__nom">Direction de l'Analyse, de la Prévision et des Statistiques Agricoles</span>
+    </a>
+    <div class="entete__outils">
+    <form class="recherche" action="{{ path('<front>') }}search/node" method="get" role="search">
+      <label class="visually-hidden" for="recherche-site">Rechercher sur le site</label>
+      <input id="recherche-site" type="search" name="keys" placeholder="Rechercher…">
+      <button type="submit" aria-label="Lancer la recherche">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      </button>
+    </form>
+    <ul class="reseaux">
+      <li><a href="https://www.facebook.com/dapsa.survey" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V21"/><path d="M6 11h8"/></svg></a></li>
+      <li><a href="https://twitter.com/DAPSA_MAERSA" aria-label="X (Twitter)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M4 4l16 16"/><path d="M20 4L4 20"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/company/direction-de-l-analyse-de-la-pr%C3%A9vision-et-des-statistiques-agricoles-dapsa/" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 10v7M8 7v.01M12 17v-7M12 13a3 3 0 0 1 6 0v4"/></svg></a></li>
+      <li><a href="https://www.youtube.com/channel/UCKQdSjg8D9TFY4_TYDp0oAw" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z"/></svg></a></li>
+    </ul>
+    </div>
+  </div>
+  <nav class="menu-principal" aria-label="Navigation principale">
+    {{ drupal_menu('main', 1, 1) }}
+  </nav>
+</header>

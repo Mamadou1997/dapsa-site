@@ -1,0 +1,8 @@
+uuid: 74170c23-8d3f-4261-bc07-f4706c5c4680
+langcode: en
+status: true
+dependencies: {  }
+id: menu-liens-utiles
+label: 'Liens utiles'
+description: ''
+locked: false
