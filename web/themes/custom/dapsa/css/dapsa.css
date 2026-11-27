@@ -166,3 +166,4 @@ a:hover, a:focus { color: #2f5a24; }
 .pied__coordonnees strong { font-family: var(--condense); font-size: 18px; color: var(--vert-fonce); }
 .pied .pied__coordonnees a { display: inline; padding: 0; color: var(--bleu-pied); text-decoration: underline; }
 .pied__coordonnees sup { line-height: 0; }
+.partenaires--page { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }

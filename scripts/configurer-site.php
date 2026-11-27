@@ -232,3 +232,43 @@ foreach ($stockage->loadMultiple($ids) as $noeud) {
   }
 }
 drupal_flush_all_caches();
+
+// 8. Listes thématiques de l'ancien site, recréées à leurs anciennes adresses
+//    (les liens « ici » des pages Statistiques, Politique agricole, etc. y mènent).
+$filtre_etiquette = fn(int $tid) => [
+  'id' => 'field_tags_target_id', 'table' => 'node__field_tags', 'field' => 'field_tags_target_id',
+  'plugin_id' => 'taxonomy_index_tid', 'vid' => 'tags', 'type' => 'select', 'limit' => TRUE,
+  'operator' => 'or', 'value' => [$tid => $tid], 'group' => 1,
+];
+$pages_listes = [];
+$poids_liste = 0;
+foreach ([
+  'rapports_eaa' => ['rapports-finaux-des-principaux-resultats-enquete-agricole-annuelle', "Rapports finaux des principaux résultats de l'Enquête Agricole Annuelle", 5],
+  'etudes_thematiques' => ['rapport-d-etudes-thematiques-approfondis-sur-le-secteur-agricole', "Rapports d'études thématiques approfondies sur le secteur agricole", 7],
+  'autres_rapports' => ['autres-rapports', 'Autres rapports', 8],
+  'revues' => ['revues-conjointes-et-biennales', 'Revues conjointes et biennales', 9],
+  'notes_fiches' => ['notes-politiques-et-fiches-d-informations', "Notes politiques et fiches d'information", 11],
+] as $did => [$chemin, $titre, $tid]) {
+  $pages_listes[$did] = ['titre' => $titre, 'plugin' => 'page', 'options' => [
+    'path' => $chemin, 'title' => $titre,
+    'defaults' => ['filters' => FALSE, 'filter_groups' => FALSE, 'title' => FALSE],
+    'filters' => ['status' => $filtre_publie, 'field_tags_target_id' => $filtre_etiquette($tid)],
+    'filter_groups' => ['operator' => 'AND', 'groups' => [1 => 'AND']],
+  ]];
+}
+$pages_listes['partenariats'] = ['titre' => 'Projets et partenariats', 'plugin' => 'page', 'options' => [
+  'path' => 'projets-et-partenairiats', 'title' => 'Projets et partenariats',
+  'defaults' => ['filters' => FALSE, 'filter_groups' => FALSE, 'title' => FALSE, 'pager' => FALSE],
+  'filters' => ['status' => $filtre_publie, 'type' => $filtre_type('partenaires')],
+  'filter_groups' => ['operator' => 'AND', 'groups' => [1 => 'AND']],
+  'pager' => ['type' => 'none', 'options' => []],
+]];
+$vue('listes_thematiques', 'Listes thématiques', [
+  'title' => 'Publications',
+  'filters' => ['status' => $filtre_publie],
+  'sorts' => ['created' => $tri_date],
+  'row' => $ligne('teaser'),
+  'pager' => ['type' => 'full', 'options' => ['items_per_page' => 20]],
+  'empty' => ['area_text_custom' => ['id' => 'area_text_custom', 'table' => 'views', 'field' => 'area_text_custom', 'plugin_id' => 'text_custom', 'empty' => TRUE, 'content' => 'Aucun document pour le moment.']],
+], $pages_listes);
+drupal_flush_all_caches();

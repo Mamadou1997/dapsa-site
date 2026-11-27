@@ -1,0 +1,379 @@
+uuid: a55d40e9-5137-465a-a514-3c7f92a1d121
+langcode: fr
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - node.type.partenaires
+    - taxonomy.vocabulary.tags
+  content:
+    - 'taxonomy_term:tags:08a66924-f63b-4bca-9675-8fd988724e7f'
+    - 'taxonomy_term:tags:08f0187f-d505-47c1-bae3-87d7ce1028de'
+    - 'taxonomy_term:tags:40f8d99d-2d21-462b-8df1-7aec990957bc'
+    - 'taxonomy_term:tags:9460122b-c9c2-4998-9581-87dcd12ca4bd'
+    - 'taxonomy_term:tags:d16e116e-8f97-4cb0-9806-61deddda1a41'
+  module:
+    - node
+    - taxonomy
+    - user
+id: listes_thematiques
+label: 'Listes thématiques'
+module: views
+description: ''
+tag: ''
+base_table: node_field_data
+base_field: nid
+display:
+  default:
+    id: default
+    display_title: 'Par défaut'
+    display_plugin: default
+    position: 0
+    display_options:
+      title: Publications
+      pager:
+        type: full
+        options:
+          items_per_page: 20
+      exposed_form:
+        type: basic
+        options:
+          submit_button: Filtrer
+          reset_button: true
+          reset_button_label: Réinitialiser
+      access:
+        type: perm
+        options:
+          perm: 'access content'
+      cache:
+        type: tag
+        options: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          plugin_id: text_custom
+          empty: true
+          content: 'Aucun document pour le moment.'
+      sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          entity_type: node
+          entity_field: created
+          plugin_id: date
+          order: DESC
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+      style:
+        type: default
+        options: {  }
+      row:
+        type: 'entity:node'
+        options:
+          view_mode: teaser
+      query:
+        type: views_query
+        options: {  }
+      display_extenders: {  }
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  autres_rapports:
+    id: autres_rapports
+    display_title: 'Autres rapports'
+    display_plugin: page
+    position: 3
+    display_options:
+      title: 'Autres rapports'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            8: 8
+          group: 1
+          vid: tags
+          type: select
+          limit: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: autres-rapports
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  etudes_thematiques:
+    id: etudes_thematiques
+    display_title: "Rapports d'études thématiques approfondies sur le secteur agricole"
+    display_plugin: page
+    position: 2
+    display_options:
+      title: "Rapports d'études thématiques approfondies sur le secteur agricole"
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            7: 7
+          group: 1
+          vid: tags
+          type: select
+          limit: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: rapport-d-etudes-thematiques-approfondis-sur-le-secteur-agricole
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  notes_fiches:
+    id: notes_fiches
+    display_title: "Notes politiques et fiches d'information"
+    display_plugin: page
+    position: 5
+    display_options:
+      title: "Notes politiques et fiches d'information"
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            11: 11
+          group: 1
+          vid: tags
+          type: select
+          limit: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: notes-politiques-et-fiches-d-informations
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  partenariats:
+    id: partenariats
+    display_title: 'Projets et partenariats'
+    display_plugin: page
+    position: 6
+    display_options:
+      title: 'Projets et partenariats'
+      pager:
+        type: none
+        options: {  }
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          value:
+            partenaires: partenaires
+          group: 1
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        pager: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: projets-et-partenairiats
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  rapports_eaa:
+    id: rapports_eaa
+    display_title: "Rapports finaux des principaux résultats de l'Enquête Agricole Annuelle"
+    display_plugin: page
+    position: 1
+    display_options:
+      title: "Rapports finaux des principaux résultats de l'Enquête Agricole Annuelle"
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            5: 5
+          group: 1
+          vid: tags
+          type: select
+          limit: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: rapports-finaux-des-principaux-resultats-enquete-agricole-annuelle
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
+  revues:
+    id: revues
+    display_title: 'Revues conjointes et biennales'
+    display_plugin: page
+    position: 4
+    display_options:
+      title: 'Revues conjointes et biennales'
+      filters:
+        status:
+          id: status
+          table: node_field_data
+          field: status
+          entity_type: node
+          entity_field: status
+          plugin_id: boolean
+          value: '1'
+          group: 1
+        field_tags_target_id:
+          id: field_tags_target_id
+          table: node__field_tags
+          field: field_tags_target_id
+          plugin_id: taxonomy_index_tid
+          operator: or
+          value:
+            9: 9
+          group: 1
+          vid: tags
+          type: select
+          limit: true
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+      defaults:
+        title: false
+        filters: false
+        filter_groups: false
+      display_extenders: {  }
+      path: revues-conjointes-et-biennales
+    cache_metadata:
+      max-age: -1
+      contexts:
+        - 'languages:language_interface'
+        - url.query_args
+        - 'user.node_grants:view'
+        - user.permissions
+      tags: {  }
